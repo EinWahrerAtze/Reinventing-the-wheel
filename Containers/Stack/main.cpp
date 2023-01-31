@@ -10,6 +10,7 @@
 
 int main(int argc, const char * argv[])
 {
+	system("clear");
 	constexpr int size {10};
 	reinvent::container::stack<int> s1;
 	std::cout << "s1 stack is created\n";
@@ -26,7 +27,7 @@ int main(int argc, const char * argv[])
 	{
 		for (int i {}; i < size; ++i)
 		{
-			std::cout << s1.pop() << ' ';
+			std::cout << s1.top() << ' ';
 		}
 	}
 	catch (const std::runtime_error & ex)
@@ -41,27 +42,24 @@ int main(int argc, const char * argv[])
 	{
 		for (int i {}; i < size; ++i)
 		{
-			std::cout << s2.pop() << ' ';
+			std::cout << s2.top() << ' ';
 		}
 	}
 	catch (const std::runtime_error & ex)
 	{
 		std::cout << "\ns2 " << ex.what() << '\n';
 	}
-	
 	std::cout << "\ns1 stack:\n";
 	try
 	{
 		for (int i {}; i < size; ++i)
 		{
-			std::cout << s1.pop() << ' ';
+			std::cout << s1.top() << ' ';
 		}
 	}
 	catch (const std::runtime_error & ex)
 	{
 		std::cout << "\ns1 " << ex.what() << '\n';
 	}
-	std::cout << '\n';
-
 	return 0;
 }
